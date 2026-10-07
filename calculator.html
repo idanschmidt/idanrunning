@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>מחשבון ריצה | עולם הריצה של עידן</title>
+
+    <meta name="description"
+          content="מחשבון ריצה לחישוב קצב, זמן ריצה וקצב יעד.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        🏃‍♂️ עולם הריצה של עידן
+    </div>
+
+    <nav class="nav">
+        <a href="index.html">ראשי</a>
+        <a href="calculator.html">מחשבון ריצה</a>
+        <a href="#">מסלולים</a>
+        <a href="#">טיפים</a>
+        <a href="about.html">אודות</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="page-hero">
+
+        <h1>🧮 מחשבון ריצה</h1>
+
+        <p>
+            כלים פשוטים שיעזרו לך להבין את הקצב, הזמן והיעדים שלך.
+        </p>
+
+    </section>
+
+
+    <section class="calculator-section">
+
+        <div class="calculator-card">
+
+            <h2>🏃 מחשבון קצב</h2>
+
+            <p>
+                הזן מרחק וזמן ריצה וקבל את הקצב שלך.
+            </p>
+
+            <label>מרחק בק"מ</label>
+
+            <input
+                type="number"
+                id="paceDistance"
+                placeholder="לדוגמה: 5"
+                step="0.1"
+            >
+
+            <label>זמן ריצה</label>
+
+            <div class="time-inputs">
+
+                <input
+                    type="number"
+                    id="paceHours"
+                    placeholder="שעות"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="paceMinutes"
+                    placeholder="דקות"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="paceSeconds"
+                    placeholder="שניות"
+                    min="0"
+                >
+
+            </div>
+
+            <button onclick="calculatePace()">
+                חשב קצב
+            </button>
+
+            <div id="paceResult" class="result"></div>
+
+        </div>
+
+
+
+        <div class="calculator-card">
+
+            <h2>⏱️ זמן לפי קצב</h2>
+
+            <p>
+                הזן מרחק וקצב וקבל את זמן הסיום המשוער.
+            </p>
+
+            <label>מרחק בק"מ</label>
+
+            <input
+                type="number"
+                id="timeDistance"
+                placeholder="לדוגמה: 10"
+                step="0.1"
+            >
+
+            <label>קצב לדקה לק"מ</label>
+
+            <div class="time-inputs">
+
+                <input
+                    type="number"
+                    id="paceMinutesInput"
+                    placeholder="דקות"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="paceSecondsInput"
+                    placeholder="שניות"
+                    min="0"
+                    max="59"
+                >
+
+            </div>
+
+            <button onclick="calculateTime()">
+                חשב זמן
+            </button>
+
+            <div id="timeResult" class="result"></div>
+
+        </div>
+
+
+
+        <div class="calculator-card">
+
+            <h2>🎯 קצב למטרה</h2>
+
+            <p>
+                רוצה לסיים בזמן מסוים? גלה איזה קצב אתה צריך.
+            </p>
+
+            <label>מרחק בק"מ</label>
+
+            <input
+                type="number"
+                id="targetDistance"
+                placeholder="לדוגמה: 5"
+                step="0.1"
+            >
+
+            <label>זמן יעד</label>
+
+            <div class="time-inputs">
+
+                <input
+                    type="number"
+                    id="targetHours"
+                    placeholder="שעות"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="targetMinutes"
+                    placeholder="דקות"
+                    min="0"
+                >
+
+                <input
+                    type="number"
+                    id="targetSeconds"
+                    placeholder="שניות"
+                    min="0"
+                >
+
+            </div>
+
+            <button onclick="calculateTargetPace()">
+                חשב קצב יעד
+            </button>
+
+            <div id="targetResult" class="result"></div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <p>
+        © 2026 עולם הריצה של עידן
+    </p>
+
+</footer>
+
+
+<script>
+
+function formatTime(totalSeconds) {
+
+    totalSeconds = Math.round(totalSeconds);
+
+    const hours = Math.floor(totalSeconds / 3600);
+
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+    const seconds = totalSeconds % 60;
+
+    if (hours > 0) {
+
+        return `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    }
+
+    return `${minutes}:${String(seconds).padStart(2, '0')}`;
+}
+
+
+function calculatePace() {
+
+    const distance = parseFloat(
+        document.getElementById("paceDistance").value
+    );
+
+    const hours = parseFloat(
+        document.getElementById("paceHours").value
+    ) || 0;
+
+    const minutes = parseFloat(
+        document.getElementById("paceMinutes").value
+    ) || 0;
+
+    const seconds = parseFloat(
+        document.getElementById("paceSeconds").value
+    ) || 0;
+
+
+    if (!distance || distance <= 0) {
+
+        document.getElementById("paceResult").innerHTML =
+            "נא להזין מרחק.";
+
+        return;
+    }
+
+
+    const totalSeconds =
+        hours * 3600 +
+        minutes * 60 +
+        seconds;
+
+
+    if (totalSeconds <= 0) {
+
+        document.getElementById("paceResult").innerHTML =
+            "נא להזין זמן ריצה.";
+
+        return;
+    }
+
+
+    const paceSeconds = totalSeconds / distance;
+
+    const paceMinutes = Math.floor(paceSeconds / 60);
+
+    const remainingSeconds =
+        Math.round(paceSeconds % 60);
+
+
+    document.getElementById("paceResult").innerHTML =
+
+        `הקצב שלך הוא <strong>
+        ${paceMinutes}:${String(remainingSeconds).padStart(2, '0')}
+        דק׳/ק"מ
+        </strong>`;
+}
+
+
+
+function calculateTime() {
+
+    const distance = parseFloat(
+        document.getElementById("timeDistance").value
+    );
+
+    const minutes = parseFloat(
+        document.getElementById("paceMinutesInput").value
+    ) || 0;
+
+    const seconds = parseFloat(
+        document.getElementById("paceSecondsInput").value
+    ) || 0;
+
+
+    if (!distance || distance <= 0) {
+
+        document.getElementById("timeResult").innerHTML =
+            "נא להזין מרחק.";
+
+        return;
+    }
+
+
+    const paceSeconds =
+        minutes * 60 + seconds;
+
+
+    if (paceSeconds <= 0) {
+
+        document.getElementById("timeResult").innerHTML =
+            "נא להזין קצב.";
+
+        return;
+    }
+
+
+    const totalSeconds =
+        distance * paceSeconds;
+
+
+    document.getElementById("timeResult").innerHTML =
+
+        `זמן הסיום המשוער:
+        <strong>
+        ${formatTime(totalSeconds)}
+        </strong>`;
+}
+
+
+
+function calculateTargetPace() {
+
+    const distance = parseFloat(
+        document.getElementById("targetDistance").value
+    );
+
+    const hours = parseFloat(
+        document.getElementById("targetHours").value
+    ) || 0;
+
+    const minutes = parseFloat(
+        document.getElementById("targetMinutes").value
+    ) || 0;
+
+    const seconds = parseFloat(
+        document.getElementById("targetSeconds").value
+    ) || 0;
+
+
+    if (!distance || distance <= 0) {
+
+        document.getElementById("targetResult").innerHTML =
+            "נא להזין מרחק.";
+
+        return;
+    }
+
+
+    const totalSeconds =
+        hours * 3600 +
+        minutes * 60 +
+        seconds;
+
+
+    if (totalSeconds <= 0) {
+
+        document.getElementById("targetResult").innerHTML =
+            "נא להזין זמן יעד.";
+
+        return;
+    }
+
+
+    const paceSeconds =
+        totalSeconds / distance;
+
+
+    const paceMinutes =
+        Math.floor(paceSeconds / 60);
+
+
+    const remainingSeconds =
+        Math.round(paceSeconds % 60);
+
+
+    document.getElementById("targetResult").innerHTML =
+
+        `כדי להגיע ליעד:
+        <strong>
+        ${paceMinutes}:${String(remainingSeconds).padStart(2, '0')}
+        דק׳/ק"מ
+        </strong>`;
+}
+
+</script>
+
+</body>
+
+</html>
