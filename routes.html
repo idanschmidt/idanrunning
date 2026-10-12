@@ -6,114 +6,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>מסלולי הריצה שלי | עולם הריצה של עידן</title>
+    <title>מסלולי ריצה | עולם הריצה של עידן</title>
+
+    <meta name="description"
+          content="מסלולי הריצה של עידן - מסלולים, מרחקים, תמונות וחוויות מהריצה.">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>מסלולי הריצה שלי</h1>
-        <p>מקומות שאני אוהב לרוץ בהם, מסלולים חדשים וחוויות מהדרך</p>
+    <!-- תפריט עליון -->
+    <header class="header">
+
+        <div class="logo">
+            🏃‍♂️ עולם הריצה של עידן
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">ראשי</a>
+            <a href="calculator.html">מחשבון ריצה</a>
+            <a href="routes.html">מסלולים</a>
+            <a href="#">סיפורים ותמונות</a>
+            <a href="about.html">אודות</a>
+        </nav>
+
     </header>
 
-    <nav>
-        <a href="index.html">דף הבית</a>
-        <a href="about.html">קצת עליי</a>
-        <a href="routes.html">מסלולים </a>
-    </nav>
 
-    <main>
+    <!-- כותרת העמוד -->
+    <section class="section">
 
-        <section>
-            <h2>המסלולים שלי</h2>
+        <div class="section-title">
 
-            <p>
-                כאן אשתף מסלולי ריצה שאני מכיר ואוהב,
-                יחד עם תמונות, מרחקים וטיפים למי שרוצה לצאת לרוץ.
-            </p>
-        </section>
-
-        <section id="route-fields">
-            <h2>ריצה בשדות</h2>
-
-            <img
-                src="images/route-fields.jpg"
-                alt="מסלול ריצה בשדות"
-                width="400"
-            >
-
-            <p>מסלול באוויר הפתוח, עם נוף לשדות ואווירה רגועה.</p>
-
-            <ul>
-                <li>מרחק: 5 ק"מ</li>
-                <li>סוג מסלול: שטח פתוח</li>
-                <li>רמת קושי: קלה</li>
-            </ul>
-        </section>
-
-        <section id="route-park">
-            <h2>ריצה בפארק</h2>
-
-            <img
-                src="images/route-park.jpg"
-                alt="מסלול ריצה בפארק"
-                width="400"
-            >
-
-            <p>מסלול שמתאים לריצה יומיומית, לאימון קל ולשמירה על כושר.</p>
-
-            <ul>
-                <li>מרחק: 3 ק"מ</li>
-                <li>סוג מסלול: פארק</li>
-                <li>רמת קושי: קלה</li>
-            </ul>
-        </section>
-
-        <section id="route-long">
-            <h2>ריצה למרחקים ארוכים</h2>
-
-            <img
-                src="images/route-long.jpg"
-                alt="שביל ריצה ארוך בטבע"
-                width="400"
-            >
-
-            <p>מסלול למי שרוצה לשפר סיבולת ולצבור קילומטרים.</p>
-
-            <ul>
-                <li>מרחק: 10 ק"מ</li>
-                <li>סוג מסלול: שטח פתוח</li>
-                <li>רמת קושי: בינונית</li>
-            </ul>
-        </section>
-
-        <section id="running-photos">
-            <h2>תמונות מהריצות שלי</h2>
-
-            <p>
-                כאן אוסיף תמונות אמיתיות מהמסלולים שאני רץ בהם.
+            <p class="section-small-title">
+                יוצאים לדרך
             </p>
 
-            <img
-                src="images/my-run-1.jpg"
-                alt="תמונה מאחת הריצות שלי"
-                width="300"
-            >
+            <h1>
+                מסלולי הריצה שלי 🗺️
+            </h1>
 
-            <img
-                src="images/my-run-2.jpg"
-                alt="נוף במהלך ריצה"
-                width="300"
-            >
-        </section>
+            <p>
+                מסלולים שאני אוהב, מקומות חדשים לגלות
+                וחוויות מהדרך.
+            </p>
 
-    </main>
+        </div>
 
-    <footer>
-        <p>עולם הריצה של עידן</p>
+
+        <!-- כרטיסי המסלולים -->
+        <div class="cards">
+
+            <!-- מסלול ראשון -->
+            <div class="card">
+
+                <img
+                    src="images/route-fields.jpg"
+                    alt="מסלול ריצה בשדות"
+                    width="400"
+                >
+
+                <h3>
+                    ריצה בשדות 🌿
+                </h3>
+
+                <p>
+                    מסלול באוויר הפתוח, עם נוף לשדות
+                    ואווירה רגועה.
+                </p>
+
+                <p>
+                    <strong>מרחק:</strong> 5 ק"מ
+                </p>
+
+                <p>
+                    <strong>סוג מסלול:</strong> שטח פתוח
+                </p>
+
+                <p>
+                    <strong>רמת קושי:</strong> קלה
+                </p>
+
+                <a href="https://www.google.com/maps"
+                   class="card-link"
+                   target="_blank"
+                   rel="noopener">
+                    לפתיחת מפה ←
+                </a>
+
+            </div>
+
+
+            <!-- מסלול שני -->
+            <div class="card">
+
+                <img
+                    src="images/route-park.jpg"
+                    alt="מסלול ריצה בפארק"
+                    width="400"
+                >
+
+                <h3>
+                    ריצה בפארק 🌳
+                </h3>
+
+                <p>
+                    מסלול נוח לריצה יומיומית,
+                    לאימון קל ולשמירה על כושר.
+                </p>
+
+                <p>
+                    <strong>מרחק:</strong> 3 ק"מ
+                </p>
+
+                <p>
+                    <strong>סוג מסלול:</strong> פארק
+                </p>
+
+                <p>
+                    <strong>רמת קושי:</strong> קלה
+                </p>
+
+                <a href="https://www.google.com/maps"
+                   class="card-link"
+                   target="_blank"
+                   rel="noopener">
+                    לפתיחת מפה ←
+                </a>
+
+            </div>
+
+
+            <!-- מסלול שלישי -->
+            <div class="card">
+
+                <img
+                    src="images/route-long.jpg"
+                    alt="מסלול ריצה ארוך בטבע"
+                    width="400"
+                >
+
+                <h3>
+                    ריצה למרחקים 🏃‍♂️
+                </h3>
+
+                <p>
+                    מסלול למי שרוצה לצבור קילומטרים
+                    ולשפר את הסיבולת.
+                </p>
+
+                <p>
+                    <strong>מרחק:</strong> 10 ק"מ
+                </p>
+
+                <p>
+                    <strong>סוג מסלול:</strong> שטח פתוח
+                </p>
+
+                <p>
+                    <strong>רמת קושי:</strong> בינונית
+                </p>
+
+                <a href="https://www.google.com/maps"
+                   class="card-link"
+                   target="_blank"
+                   rel="noopener">
+                    לפתיחת מפה ←
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- גלריית תמונות -->
+    <section class="section">
+
+        <div class="section-title">
+
+            <p class="section-small-title">
+                רגעים מהדרך
+            </p>
+
+            <h2>
+                תמונות מהריצות שלי 📸
+            </h2>
+
+            <p>
+                תמונות מהמסלולים, מהנוף ומהריצות שלי.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <img
+                    src="images/my-run-1.jpg"
+                    alt="תמונה מאחת הריצות שלי"
+                    width="400"
+                >
+                <h3>רגע מהשטח</h3>
+            </div>
+
+            <div class="card">
+                <img
+                    src="images/my-run-2.jpg"
+                    alt="נוף במהלך ריצה"
+                    width="400"
+                >
+                <h3>הנוף בדרך</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- תחתית האתר -->
+    <footer class="footer">
+
+        <p>
+            © 2026 עולם הריצה של עידן
+        </p>
+
+        <p>
+            נבנה באהבה לריצה 🏃‍♂️
+        </p>
+
     </footer>
 
 </body>
+
 </html>
