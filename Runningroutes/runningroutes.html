@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מסלולי הריצה שלי | עולם הריצה של עידן</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7f3;
+      color: #26352d;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #244b3b;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 34px;
+      margin: 0 0 8px;
+    }
+
+    header p {
+      margin: 0;
+      color: #e0e9e2;
+    }
+
+    nav {
+      background: white;
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #e3e9e3;
+    }
+
+    nav a {
+      color: #244b3b;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    .intro {
+      max-width: 1050px;
+      margin: 35px auto 25px;
+      padding: 0 20px;
+    }
+
+    .intro h2 {
+      font-size: 27px;
+      margin-bottom: 5px;
+    }
+
+    .intro p {
+      color: #66746b;
+    }
+
+    .routes {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .route-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px #26352d12;
+    }
+
+    .route-card img {
+      width: 100%;
+      height: 215px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .route-content {
+      padding: 20px;
+    }
+
+    .route-content h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .details span {
+      background: #edf3ed;
+      color: #315c43;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    .route-content p {
+      color: #637067;
+    }
+
+    .route-link {
+      display: inline-block;
+      background: #2e6549;
+      color: white;
+      padding: 9px 16px;
+      border-radius: 7px;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    .photos {
+      background: #e8efe7;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .photos-inner {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .photos input {
+      margin: 15px;
+      max-width: 100%;
+    }
+
+    #preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    #preview img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #244b3b;
+      color: white;
+      text-align: center;
+      padding: 22px;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🏃 מסלולי הריצה שלי</h1>
+    <p>עולם הריצה של עידן | יוצאים לרוץ ומגלים מקומות חדשים</p>
+  </header>
+
+  <nav>
+    <a href="index.html">דף הבית</a>
+    <a href="about.html">קצת עליי</a>
+    <a href="#routes">המסלולים שלי</a>
+    <a href="#photos">גלריית תמונות</a>
+  </nav>
+
+  <section class="intro">
+    <h2>המסלולים שאני אוהב</h2>
+    <p>
+      כל מסלול הוא חוויה אחרת. כאן אני משתף מסלולים שאני רץ בהם,
+      תמונות מהשטח וטיפים למי שרוצה לצאת לריצה משלו.
+    </p>
+  </section>
+
+  <section class="routes" id="routes">
+
+    <article class="route-card">
+      <img src="images/route-fields.jpg"
+           alt="מסלול ריצה בשדות ירוקים">
+
+      <div class="route-content">
+        <h3>ריצה בשדות</h3>
+        <p>
+          מסלול פתוח באוויר הצח, עם נוף לשדות ואפשרות
+          ליהנות מריצה רגועה מחוץ לעיר.
+        </p>
+        <div class="details">
+          <span>📏 5 ק"מ</span>
+          <span>🌿 שטח פתוח</span>
+          <span>⭐ קל</span>
+        </div>
+        <a class="route-link"
+           href="https://www.google.com/maps"
+           target="_blank" rel="noopener">
+          פתיחת מפה
+        </a>
+      </div>
+    </article>
+
+    <article class="route-card">
+      <img src="images/route-park.jpg"
+           alt="מסלול ריצה בפארק ירוק">
+
+      <div class="route-content">
+        <h3>סיבוב בפארק</h3>
+        <p>
+          מסלול נוח לאימון יומיומי, לריצה קלה
+          או לשמירה על קצב אחיד.
+        </p>
+        <div class="details">
+          <span>📏 3 ק"מ</span>
+          <span>🌳 פארק</span>
+          <span>⭐ קל</span>
+        </div>
+        <a class="route-link"
+           href="https://www.google.com/maps"
+           target="_blank" rel="noopener">
+          פתיחת מפה
+        </a>
+      </div>
+    </article>
+
+    <article class="route-card">
+      <img src="images/route-long.jpg"
+           alt="שביל ריצה ארוך בטבע">
+
+      <div class="route-content">
+        <h3>ריצה למרחקים</h3>
+        <p>
+          למי שרוצה לצבור קילומטרים, לשפר סיבולת
+          וליהנות מריצה ארוכה בקצב נוח.
+        </p>
+        <div class="details">
+          <span>📏 10 ק"מ</span>
+          <span>🏃 ריצה ארוכה</span>
+          <span>⭐ בינוני</span>
+        </div>
+        <a class="route-link"
+           href="https://www.google.com/maps"
+           target="_blank" rel="noopener">
+          פתיחת מפה
+        </a>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="photos" id="photos">
+    <div class="photos-inner">
+      <h2>📸 רגעים מהריצות שלי</h2>
+      <p>
+        בחר תמונות מהמחשב כדי לראות איך הגלריה שלך יכולה להיראות.
+      </p>
+
+      <input type="file" id="photoInput"
+             accept="image/*" multiple>
+
+      <div id="preview"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>עולם הריצה של עידן | רצים בדרך שלנו 🏃</p>
+  </footer>
+
+  <script>
+    const photoInput = document.getElementById("photoInput");
+    const preview = document.getElementById("preview");
+
+    photoInput.addEventListener("change", function () {
+      preview.innerHTML = "";
+
+      Array.from(this.files).forEach(function (file) {
+        if (!file.type.startsWith("image/")) return;
+
+        const image = document.createElement("img");
+        image.src = URL.createObjectURL(file);
+        image.alt = "תמונה מהריצה שלי";
+        preview.appendChild(image);
+      });
+    });
+  </script>
+
+</body>
+</html>
