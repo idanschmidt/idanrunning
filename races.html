@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>המירוצים שלי | עולם הריצה של עידן</title>
+
+    <!-- העיצוב הקיים של האתר -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- עיצוב ייחודי לעמוד המירוצים -->
+    <style>
+        .races-intro {
+            max-width: 850px;
+            margin: 0 auto 35px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .race-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .race-card {
+            background: #ffffff;
+            color: #111827;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .race-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .race-image {
+            height: 240px;
+            background: linear-gradient(135deg, #dbeafe, #93c5fd);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a8a;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .race-image .image-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .race-image p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* תמונה אמיתית שתתווסף בעתיד */
+        .race-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .race-content {
+            padding: 24px;
+        }
+
+        .race-date {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .race-content h3 {
+            margin: 0 0 12px;
+            font-size: 23px;
+            color: #111827;
+        }
+
+        .race-description {
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .race-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .race-stat {
+            background: #f3f6fb;
+            border-radius: 10px;
+            text-align: center;
+            padding: 13px 5px;
+        }
+
+        .race-stat strong {
+            display: block;
+            color: #2563eb;
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .race-stat span {
+            font-size: 12px;
+            color: #4b5563;
+        }
+
+        .race-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .race-story {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .race-story h4 {
+            margin: 0 0 8px;
+            color: #111827;
+        }
+
+        .race-quote {
+            margin-top: 12px;
+            padding: 12px;
+            border-right: 3px solid #2563eb;
+            background: #f8fafc;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .races-note {
+            text-align: center;
+            margin-top: 35px;
+            padding: 25px;
+            background: #f3f6fb;
+            border-radius: 14px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 800px) {
+            .race-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .race-image {
+                height: 210px;
+            }
+
+            .race-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .race-stats {
+                gap: 5px;
+            }
+
+            .race-stat strong {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- כותרת ותפריט האתר -->
+    <header class="header">
+        <div class="logo">עולם הריצה של עידן</div>
+
+        <nav class="nav">
+            <a href="index.html">ראשי</a>
+            <a href="calculator.html">מחשבון ריצה</a>
+            <a href="routes.html">מסלולים</a>
+            <a href="races.html">המירוצים שלי</a>
+            <a href="about.html">אודות</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- פתיח -->
+        <section class="section">
+            <div class="section-title">
+                <h1>המירוצים שלי 🏃‍♂️</h1>
+                <p>כל מירוץ הוא סיפור, וכל קו סיום הוא התחלה חדשה.</p>
+            </div>
+
+            <div class="races-intro">
+                <p>
+                    כאן אני משתף את הדרך שלי בעולם הריצה:
+                    המירוצים שהשתתפתי בהם, התוצאות שהשגתי,
+                    הרגעים המאתגרים והתחושות שנשארות איתי גם אחרי קו הסיום.
+                </p>
+
+                <p>
+                    אני לא רץ רק בשביל השעון.
+                    אני רץ כדי להשתפר, ליהנות מהדרך ולגלות בכל פעם
+                    קצת יותר על עצמי.
+                </p>
+            </div>
+
+            <!-- כרטיסי מירוצים -->
+            <div class="race-grid">
+
+                <!-- מירוץ 1 -->
+                <article class="race-card">
+
+                    <div class="race-image">
+                        <!--
+                        בהמשך אפשר להחליף את כל ה-div הזה בתמונה:
+                        <img src="images/races/tel-aviv-half-2025.jpg"
+                             alt="אני במהלך חצי מרתון תל אביב 2025">
+                        -->
+                        <span class="image-icon">📸</span>
+                        <p>כאן תופיע תמונה מחצי מרתון תל אביב</p>
+                    </div>
+
+                    <div class="race-content">
+                        <span class="race-tag">חצי מרתון</span>
+
+                        <div class="race-date">
+                            תל אביב | 2025
+                        </div>
+
+                        <h3>חצי מרתון תל אביב</h3>
+
+                        <p class="race-description">
+                            21.1 קילומטרים של התמודדות, התמדה ואדרנלין.
+                            מירוץ שבו יצאתי לבדוק את הגבולות שלי
+                            וליהנות מהאווירה המיוחדת של הריצה בתל אביב.
+                        </p>
+
+                        <div class="race-stats">
+                            <div class="race-stat">
+                                <strong>21.1</strong>
+                                <span>קילומטרים</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>1:45:06</strong>
+                                <span>זמן סיום</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>4:59</strong>
+                                <span>דק׳ לק"מ</span>
+                            </div>
+                        </div>
+
+                        <div class="race-story">
+                            <h4>הסיפור שלי מהמירוץ</h4>
+
+                            <p>
+                                כאן אכתוב איך הרגשתי לפני הזינוק,
+                                מה עבר לי בראש במהלך הריצה ואיך הרגשתי
+                                כשהגעתי לקו הסיום.
+                            </p>
+
+                            <p>
+                                אפשר לספר על קטע קשה במיוחד,
+                                על עידוד מהקהל או על הרגע שבו הבנתי
+                                שאני מסוגל להשיג את המטרה שלי.
+                            </p>
+
+                            <div class="race-quote">
+                                "המשפט או הרגע שאני רוצה לזכור מהמירוץ הזה..."
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- מירוץ 2 -->
+                <article class="race-card">
+
+                    <div class="race-image">
+                        <!-- בהמשך אפשר להוסיף כאן תמונה אמיתית מהמירוץ -->
+                        <span class="image-icon">📸</span>
+                        <p>כאן תופיע תמונה ממרוץ רחובות</p>
+                    </div>
+
+                    <div class="race-content">
+                        <span class="race-tag">5 ק"מ</span>
+
+                        <div class="race-date">
+                            רחובות | 2025
+                        </div>
+
+                        <h3>מרוץ רחובות</h3>
+
+                        <p class="race-description">
+                            מרוץ קצר ואינטנסיבי שבו כל שנייה חשובה.
+                            הזדמנות לבחון את הקצב, לעבוד על המהירות
+                            ולראות מה אפשר להשיג כשנותנים את כל מה שיש.
+                        </p>
+
+                        <div class="race-stats">
+                            <div class="race-stat">
+                                <strong>5</strong>
+                                <span>קילומטרים</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>23:50</strong>
+                                <span>זמן סיום</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>4:46</strong>
+                                <span>דק׳ לק"מ</span>
+                            </div>
+                        </div>
+
+                        <div class="race-story">
+                            <h4>הסיפור שלי מהמירוץ</h4>
+
+                            <p>
+                                כאן אפשר לספר איך התכוננתי למרוץ,
+                                האם ניסיתי לשבור שיא אישי ואיך חילקתי
+                                את הכוחות לאורך חמשת הקילומטרים.
+                            </p>
+
+                            <p>
+                                מה למדתי מהמירוץ? מה הייתי עושה אחרת?
+                                והאם הצלחתי לעמוד בציפיות שלי?
+                            </p>
+
+                            <div class="race-quote">
+                                "כל צעד מקרב אותי לגרסה טובה יותר של עצמי."
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- מירוץ 3: תבנית להעתקה -->
+                <article class="race-card">
+
+                    <div class="race-image">
+                        <span class="image-icon">📸</span>
+                        <p>כאן תופיע התמונה מהמירוץ הבא</p>
+                    </div>
+
+                    <div class="race-content">
+                        <span class="race-tag">המירוץ הבא</span>
+
+                        <div class="race-date">
+                            תאריך המירוץ
+                        </div>
+
+                        <h3>שם המירוץ</h3>
+
+                        <p class="race-description">
+                            כאן אכתוב כמה משפטים על המירוץ,
+                            איפה הוא התקיים, מה הייתה המטרה שלי
+                            ולמה בחרתי להשתתף בו.
+                        </p>
+
+                        <div class="race-stats">
+                            <div class="race-stat">
+                                <strong>10</strong>
+                                <span>קילומטרים</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>00:00</strong>
+                                <span>זמן סיום</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>0:00</strong>
+                                <span>דק׳ לק"מ</span>
+                            </div>
+                        </div>
+
+                        <div class="race-story">
+                            <h4>הסיפור שלי מהמירוץ</h4>
+
+                            <p>
+                                כאן אוסיף את החוויה האישית שלי,
+                                את האתגרים שפגשתי ואת הדברים שאני
+                                לוקח איתי למירוצים הבאים.
+                            </p>
+
+                            <div class="race-quote">
+                                "כאן יופיע משפט אישי מהמירוץ."
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- מירוץ 4: תבנית להעתקה -->
+                <article class="race-card">
+
+                    <div class="race-image">
+                        <span class="image-icon">📸</span>
+                        <p>כאן תופיע תמונה נוספת</p>
+                    </div>
+
+                    <div class="race-content">
+                        <span class="race-tag">סוג המירוץ</span>
+
+                        <div class="race-date">
+                            תאריך | שנה
+                        </div>
+
+                        <h3>שם המירוץ</h3>
+
+                        <p class="race-description">
+                            תיאור קצר של החוויה, המסלול והאווירה.
+                            בהמשך אפשר להוסיף גם קישור לתוצאה הרשמית
+                            או לפעילות ב-Strava.
+                        </p>
+
+                        <div class="race-stats">
+                            <div class="race-stat">
+                                <strong>10</strong>
+                                <span>קילומטרים</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>00:00</strong>
+                                <span>זמן סיום</span>
+                            </div>
+
+                            <div class="race-stat">
+                                <strong>0:00</strong>
+                                <span>דק׳ לק"מ</span>
+                            </div>
+                        </div>
+
+                        <div class="race-story">
+                            <h4>הסיפור שלי מהמירוץ</h4>
+
+                            <p>
+                                כאן אכתוב את הסיפור שלי,
+                                מה היה מיוחד במירוץ ומה למדתי ממנו.
+                            </p>
+
+                            <div class="race-quote">
+                                "עוד מירוץ, עוד חוויה, עוד צעד קדימה."
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- סיום העמוד -->
+            <div class="races-note">
+                <h2>המירוץ הבא כבר באופק 🎯</h2>
+
+                <p>
+                    כל מירוץ הוא עוד הזדמנות ללמוד, להשתפר וליהנות.
+                    אני ממשיך לרוץ, להציב מטרות ולבנות את הדרך שלי
+                    צעד אחד בכל פעם.
+                </p>
+
+                <a href="routes.html" class="card-link">
+                    בואו להכיר את מסלולי הריצה שלי
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© עולם הריצה של עידן | רצים בדרך שלנו</p>
+    </footer>
+
+</body>
+</html>
